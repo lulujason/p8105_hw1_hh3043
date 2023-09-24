@@ -4,5 +4,23 @@ author: "Haitian Huang"
 date: "2023-09-22"
 output: html_document
 ---
+# Problem 1
 
+
+```{r echo = FALSE}
+library('moderndive')
+library(ggplot2)
+data('early_january_weather')
+
+```
+
+This dataset formed by weather data collected in January 2013 for LGA, JFK and EWR .
+
+There are 15 variables:origin,year,month,day,hour,
+temperature,dewpoint in F,humid,wind direction,wind speed,
+gust speed,precipitation,pressure,visibility and data and hour of recording as POSIXct date.
+
+There are `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
+
+The mean of temperatures is `r colMeans(early_january_weather[,6])`.
 
