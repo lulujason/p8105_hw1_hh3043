@@ -45,3 +45,6 @@ df =
   vec_character = sample(c('w','e'),size=10,replace = TRUE),
   vec_factor = factor(c(sample(c('dog','cat','mouse'),size=10,replace = TRUE)))
 )
+```
+
+
