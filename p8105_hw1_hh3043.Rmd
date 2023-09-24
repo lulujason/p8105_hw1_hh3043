@@ -24,3 +24,12 @@ There are `r nrow(early_january_weather)` rows and `r ncol(early_january_weather
 
 The mean of temperatures is `r colMeans(early_january_weather[,6])`.
 
+
+
+```{r echo = FALSE}
+
+ggplot(early_january_weather,aes(time_hour,temp,color = humid))+geom_point()
+```
+
+From the graph, we can see in general temperature is positively proportional to time_hour. When time_hour and temp are high,humid is high.
+
