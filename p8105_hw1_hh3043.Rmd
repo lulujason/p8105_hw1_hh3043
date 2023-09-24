@@ -48,3 +48,26 @@ df =
 ```
 
 
+```{r eval = FALSE}
+mean(pull(df,vec_num))
+mean(pull(df,vec_log))
+mean(pull(df,vec_character))
+mean(pull(df,vec_factor))
+```
+The mean() method works for random sample and logic vector,but NA is returned for 
+vector of character and vector of factor.The mean of random sample is `r mean(pull(df,vec_num))`,and the mean of logic vector is `r mean(pull(df,vec_log))`.
+
+```{r eval = FALSE}
+as.numeric(pull(df,vec_num))
+as.numeric(pull(df,vec_log))
+as.numeric(pull(df,vec_character))
+as.numeric(pull(df,vec_factor))
+```
+The as.numeric method works for random sample,logic vector and vector of factor,returning NA for vector of character.Of course it works for random sample,because random sample is already in numeric form.
+
+Through as.numeric,TRUE is transferred to 1,and FALSE is transferred to 0.There exists statistical significance with mean() method.By taking the mean of these 0 and 1,we can get the ratio of number of TRUE to number of FALSE.
+
+As for vector of factor,there is no clear statistical significance of mean,since numbers are transferred according to the order of levels.It might be the reason why mean() does not work on it.
+
+For vector of factor,it can not be transferred to numeric even through as.numeric() method.That's why mean() method doesn't work.
+
